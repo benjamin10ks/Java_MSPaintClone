@@ -1,6 +1,5 @@
 package com.example;
 
-
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
@@ -19,22 +18,24 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        // Create a root pane
         Pane root = new Pane();
         
-        // Create a scene with the root pane
         Scene scene = new Scene(root, DEFAULT_WIDTH, DEFAULT_HEIGHT);
         final Canvas canvas = new Canvas(DEFAULT_WIDTH, DEFAULT_HEIGHT);
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
         gc.setFill(Color.BLACK);
-        gc.fillOval(0, 0, 300, 300);
 
         root.getChildren().add(canvas);
 
-        // Set up the primary stage
         primaryStage.setTitle("MS Paint Clone");
         primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/images/mordandrig.png")));
+
+        Brush brush = new Brush(0, 0, 10, Color.BLACK);
+
+        gc.fillOval(brush.getX(), brush.getY(), brush.getSize(), brush.getSize());
+        brush.setShape("circle");
+
         primaryStage.setScene(scene);
         primaryStage.show();
     }
