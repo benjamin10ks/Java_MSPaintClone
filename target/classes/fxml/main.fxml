@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.MainController"
+            prefHeight="800.0" prefWidth="1000.0">
+    
+    <top>
+        <HBox spacing="10" style="-fx-background-color:rgb(210, 210, 210);">
+            <padding><Insets top="15" right="12" bottom="15" left="12"/></padding>
+            <Button fx:id="buttonCurrent" text="Current" prefWidth="100" prefHeight="20"/>
+            <Button fx:id="buttonProjected" text="Projected" prefWidth="100" prefHeight="20"/>
+        </HBox>
+    </top>
+    
+    <center>
+        <Canvas fx:id="canvas" width="1000" height="800"/>
+    </center>
+    
+</BorderPane> 
