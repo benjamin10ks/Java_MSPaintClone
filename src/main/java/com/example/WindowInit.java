@@ -6,15 +6,13 @@ import javafx.stage.Stage;
 import javafx.scene.image.Image;
 
 public class WindowInit {
-    private final int DEFAULT_WIDTH = 1000;
-    private final int DEFAULT_HEIGHT = 800;
 
     public Scene initializeWindow(Stage primaryStage) {
         // Create a root pane
         Pane root = new Pane();
         
         // Create a scene with the root pane
-        Scene scene = new Scene(root, DEFAULT_WIDTH, DEFAULT_HEIGHT);
+        Scene scene = new Scene(root);
 
         // Set up the primary stage
         primaryStage.setTitle("MS Paint Clone");
